@@ -1,8 +1,9 @@
 import React from 'react'
 import Button, { Variant } from '@/components/ui/Button'
 import Text, { Tag } from '@/components/ui/Text'
+import Link from 'next/link'
 
-export interface PostCardProps {
+export interface PostProps {
 	id: number
 	imageUrl: string
 	title: string
@@ -12,12 +13,7 @@ export interface PostCardProps {
 	onClick?: () => void
 }
 
-const PostCard: React.FC<PostCardProps> = ({
-	title,
-	body,
-	imageUrl,
-	onClick,
-}) => {
+const PostCard: React.FC<PostProps> = ({ id, title, body, imageUrl }) => {
 	return (
 		<div className="w-full text-center flex flex-col gap-4">
 			<div
@@ -36,9 +32,9 @@ const PostCard: React.FC<PostCardProps> = ({
 			</div>
 
 			<div>
-				<Button variant={Variant.SECONDARY} onClick={onClick}>
-					Lire l&apos;article
-				</Button>
+				<Link href={`/posts/${id}`}>
+					<Button variant={Variant.SECONDARY}>Lire l&apos;article</Button>
+				</Link>
 			</div>
 		</div>
 	)

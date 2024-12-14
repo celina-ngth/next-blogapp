@@ -26,7 +26,6 @@ export default async function Home() {
 							body={post.body}
 							likes={post.likes}
 							views={post.views}
-							onClick={post.onClick}
 						/>
 					))}
 				</div>
