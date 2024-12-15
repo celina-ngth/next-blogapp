@@ -2,6 +2,7 @@ import React from 'react'
 import Button, { Variant } from '@/components/ui/Button'
 import Text, { Tag } from '@/components/ui/Text'
 import Link from 'next/link'
+import { Eye, Heart } from 'lucide-react'
 
 export interface PostProps {
 	id: number
@@ -13,30 +14,43 @@ export interface PostProps {
 	onClick?: () => void
 }
 
-const PostCard: React.FC<PostProps> = ({ id, title, body, imageUrl }) => {
+const PostCard: React.FC<PostProps> = ({
+	id,
+	title,
+	body,
+	likes,
+	views,
+	imageUrl,
+}) => {
 	return (
-		<div className="w-full text-center flex flex-col gap-4">
-			<div
-				className="w-full flex items-center bg-cover bg-center aspect-4/3 bg-medium-contrast text-white"
-				style={{ backgroundImage: `url('${imageUrl}')` }}
-			>
-				<div className="w-full font-serif">
-					<Text tag={Tag.H2} className="text-secondary">
-						{title}
-					</Text>
+		<Link href={`/posts/${id}`}>
+			<div className="w-full flex flex-col gap-4">
+				<div
+					className="w-full flex items-center bg-cover bg-center aspect-4/3 bg-medium-contrast text-white p-4 bg-opacity-20"
+					style={{ backgroundImage: `url('${imageUrl}')` }}
+				>
+					<div className="w-full">
+						<Text tag={Tag.H2} className="text-secondary">
+							{title}
+						</Text>
+					</div>
 				</div>
-			</div>
 
-			<div className="grow">
-				<Text className="line-clamp-2">{body}</Text>
-			</div>
+				<div className="grow">
+					<div className="flex justify-between">
+						<div className="flex items-center gap-2">
+							<Heart className="h-4 w-4" /> {likes} likes
+						</div>
+						<div className="flex items-center gap-2">
+							<Eye className="h-4 w-4" /> {views} views
+						</div>
+					</div>
+					<Text className="line-clamp-2">{body}</Text>
+				</div>
 
-			<div>
-				<Link href={`/posts/${id}`}>
-					<Button variant={Variant.SECONDARY}>Lire l&apos;article</Button>
-				</Link>
+				<Button variant={Variant.SECONDARY}>Lire l&apos;article</Button>
 			</div>
-		</div>
+		</Link>
 	)
 }
 
