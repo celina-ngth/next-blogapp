@@ -1,17 +1,17 @@
-import { ArticlesApi } from '@/app/api/posts/types'
-import { ArticleProps } from '@/components/Article'
+import { ArticlesApi } from '@/app/api/articles/types'
+import { ArticleProps } from '@/components/ArticleCard'
 
-export const formatArticle = (post: ArticlesApi): ArticleProps => {
+export const formatArticle = (article: ArticlesApi): ArticleProps => {
 	return {
-		id: post.id,
+		id: article.id,
 		imageUrl: 'https://via.assets.so/img.jpg?w=200&h=120',
-		title: post.title,
-		body: post.body,
-		likes: post.reactions.likes,
-		views: post.views,
+		title: article.title,
+		body: article.body,
+		likes: article.reactions.likes,
+		views: article.views,
 	}
 }
 
 export const formatArticles = (data: ArticlesApi[]): ArticleProps[] => {
-	return data.map((post) => formatArticle(post))
+	return data.map((article) => formatArticle(article))
 }

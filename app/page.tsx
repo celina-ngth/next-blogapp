@@ -1,5 +1,5 @@
-import { getArticles } from '@/app/api/posts/route'
-import Article from '@/components/Article'
+import { getArticles } from '@/app/api/articles/route'
+import Article from '@/components/ArticleCard'
 
 export default async function Home() {
 	const articles = await getArticles()
@@ -8,15 +8,15 @@ export default async function Home() {
 		<div className="grid lg:grid-cols-3 lg:divide-x divide-neutral gap-8">
 			{articles && (
 				<div className="lg:col-span-2 flex flex-col divide-y divide-neutral">
-					{articles.map((post) => (
+					{articles.map((article) => (
 						<Article
-							id={post.id}
-							key={post.id}
-							imageUrl={post.imageUrl}
-							title={post.title}
-							body={post.body}
-							likes={post.likes}
-							views={post.views}
+							id={article.id}
+							key={article.id}
+							imageUrl={article.imageUrl}
+							title={article.title}
+							body={article.body}
+							likes={article.likes}
+							views={article.views}
 						/>
 					))}
 				</div>

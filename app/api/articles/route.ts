@@ -1,4 +1,4 @@
-import { ArticleProps } from '@/components/Article'
+import { ArticleProps } from '@/components/ArticleCard'
 import { formatArticles, formatArticle } from '@/utils/formatArticles'
 import { notFound } from 'next/navigation'
 
