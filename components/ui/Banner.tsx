@@ -3,16 +3,15 @@ import Text, { Tag } from '@/components/ui/Text'
 
 interface BannerProps {
 	title: string
-	children: React.ReactNode
+	children?: React.ReactNode
 }
 
 const Banner: React.FC<BannerProps> = ({ children, title }) => {
 	return (
-		<div className="bg-info-light px-6 py-4 rounded-xl text-center mb-6">
-			<div className="uppercase">
-				<Text tag={Tag.H2}>{title}</Text>
-			</div>
-
+		<div className=" bg-neutral px-6 py-3 text-center top-[61px] mb-6 absolute w-full">
+			<Text tag={Tag.P} className="text-sm">
+				{title}
+			</Text>
 			{children}
 		</div>
 	)

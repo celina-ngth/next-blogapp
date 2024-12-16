@@ -20,7 +20,7 @@ const Text: React.FC<TextProps> = ({ tag: Tag = 'p', className, children }) => {
 				Tag,
 				{
 					className: {
-						h1: `text-3xl font-bold font-serif ${className}`,
+						h1: `text-xl font-bold font-serif ${className}`,
 						h2: `text-xl font-bold ${className}`,
 						h3: `text-lg font-bold uppercase ${className}`,
 						p: `text-base ${className}`,

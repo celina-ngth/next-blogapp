@@ -4,10 +4,10 @@ import Link from 'next/link'
 
 const Navigation = async () => {
 	return (
-		<div className="fixed bg-secondary w-full shadow-md left-0 top-0">
+		<div className="fixed bg-secondary w-full shadow-md left-0 top-0 z-50">
 			<div className="container mx-auto flex items-center justify-between my-2">
 				<Link href="/">
-					<Text tag={Tag.H1}>MyBlog.</Text>
+					<Text tag={Tag.H1}>Medium</Text>
 				</Link>
 			</div>
 		</div>
