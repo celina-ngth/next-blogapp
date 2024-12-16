@@ -17,7 +17,7 @@ const config: Config = {
       primary: '#464646',
       secondary: '#ffffff',
       'primary-light': '#f1f2f4',
-      'secondary-light': '#d9d9d9',
+      'secondary-light': '#6B6B6B',
       neutral: '#dddfe5',
       success: '#94c749',
       'success-light': '#effbda',
@@ -50,6 +50,12 @@ const config: Config = {
       '4': '16px',
       '5': '24px',
       '6': '32px',
+      '7': '40px',
+      '8': '48px',
+      '9': '56px',
+      '10': '64px',
+      '11': '72px',
+      '12': '80px',
     },
     extend: {
       aspectRatio: {

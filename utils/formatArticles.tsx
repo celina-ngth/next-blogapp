@@ -4,7 +4,7 @@ import { ArticleProps } from '@/components/Article'
 export const formatArticle = (post: ArticlesApi): ArticleProps => {
 	return {
 		id: post.id,
-		imageUrl: 'https://via.assets.so/img.jpg?w=400&h=250&tc=gray&bg=#cecece',
+		imageUrl: 'https://via.assets.so/img.jpg?w=200&h=120',
 		title: post.title,
 		body: post.body,
 		likes: post.reactions.likes,

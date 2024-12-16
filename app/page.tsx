@@ -5,13 +5,13 @@ export default async function Home() {
 	const articles = await getArticles()
 
 	return (
-		<>
+		<div className="grid lg:grid-cols-3 lg:divide-x divide-neutral gap-8">
 			{articles && (
-				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div className="lg:col-span-2 flex flex-col divide-y divide-neutral">
 					{articles.map((post) => (
 						<Article
-							key={post.id}
 							id={post.id}
+							key={post.id}
 							imageUrl={post.imageUrl}
 							title={post.title}
 							body={post.body}
@@ -21,6 +21,7 @@ export default async function Home() {
 					))}
 				</div>
 			)}
-		</>
+			<div className="w-full h-full lg:pl-8"></div>
+		</div>
 	)
 }
