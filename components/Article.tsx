@@ -4,7 +4,7 @@ import Text, { Tag } from '@/components/ui/Text'
 import Link from 'next/link'
 import { Eye, Heart } from 'lucide-react'
 
-export interface PostProps {
+export interface ArticleProps {
 	id: number
 	imageUrl: string
 	title: string
@@ -14,7 +14,7 @@ export interface PostProps {
 	onClick?: () => void
 }
 
-const PostCard: React.FC<PostProps> = ({
+const Article: React.FC<ArticleProps> = ({
 	id,
 	title,
 	body,
@@ -23,7 +23,7 @@ const PostCard: React.FC<PostProps> = ({
 	imageUrl,
 }) => {
 	return (
-		<Link href={`/posts/${id}`}>
+		<Link href={`/article/${id}`}>
 			<div className="w-full flex flex-col gap-4">
 				<div
 					className="w-full flex items-center bg-cover bg-center aspect-4/3 bg-medium-contrast text-white p-4 bg-opacity-20"
@@ -54,4 +54,4 @@ const PostCard: React.FC<PostProps> = ({
 	)
 }
 
-export default PostCard
+export default Article

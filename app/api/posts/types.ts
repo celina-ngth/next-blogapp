@@ -1,4 +1,4 @@
-export interface PostsApi {
+export interface ArticlesApi {
   id: number,
   title: string
   body: string

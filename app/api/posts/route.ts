@@ -1,8 +1,8 @@
-import { PostProps } from '@/components/PostCard'
-import { formatPosts, formatPost } from '@/utils/formatPosts'
+import { ArticleProps } from '@/components/Article'
+import { formatArticles, formatArticle } from '@/utils/formatArticles'
 import { notFound } from 'next/navigation'
 
-export async function getPosts(): Promise<PostProps[]> {
+export async function getArticles(): Promise<ArticleProps[]> {
 	try {
 		const response = await fetch(`${process.env.API_POSTS_URL}/posts`)
 		const data = await response.json()
@@ -11,19 +11,19 @@ export async function getPosts(): Promise<PostProps[]> {
 			notFound()
 		}
 
-		return formatPosts(data.posts)
+		return formatArticles(data.posts)
 	} catch (error) {
-		console.error('Failed to fetch posts', error)
-		throw new Error('Failed to fetch posts')
+		console.error('Failed to fetch articles', error)
+		throw new Error('Failed to fetch articles')
 	}
 }
 
-export async function getPost(id: number): Promise<PostProps> {
+export async function getArticle(id: number): Promise<ArticleProps> {
 	try {
 		const response = await fetch(`${process.env.API_POSTS_URL}/posts/${id}`)
 
 		if (!response.ok) {
-			throw new Error(`Failed to fetch post with id: ${id}`)
+			throw new Error(`Failed to fetch article with id: ${id}`)
 		}
 
 		const data = await response.json()
@@ -31,9 +31,9 @@ export async function getPost(id: number): Promise<PostProps> {
 			notFound()
 		}
 
-		return formatPost(data)
+		return formatArticle(data)
 	} catch (error) {
-		console.error('Error fetching post:', error)
+		console.error('Error fetching article:', error)
 		throw error
 	}
 }
