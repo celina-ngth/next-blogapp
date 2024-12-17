@@ -21,6 +21,7 @@ export default async function Home() {
 					))}
 				</div>
 			)}
+
 			<div className="w-full h-full lg:pl-8"></div>
 		</div>
 	)

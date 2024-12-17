@@ -26,9 +26,7 @@ const Article: React.FC<ArticleProps> = ({
 		<Link href={`/article/${id}`}>
 			<div className="w-full flex gap-6 py-6">
 				<div className="flex-1 flex flex-col gap-2">
-					<Text tag={Tag.H2} className="leading-tight">
-						{title}
-					</Text>
+					<Text tag={Tag.H2}>{title}</Text>
 
 					<Text className="line-clamp-2">{body}</Text>
 
