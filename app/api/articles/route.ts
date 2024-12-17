@@ -1,8 +1,8 @@
-import { ArticleProps } from '@/components/ArticleCard'
-import { formatArticles, formatArticle } from '@/utils/formatArticles'
+import { formatArticles, formatArticle, formatTags } from '@/utils/formatArticles'
 import { notFound } from 'next/navigation'
+import { ArticleType, TagType } from './types'
 
-export async function getArticles(): Promise<ArticleProps[]> {
+export async function getArticles(): Promise<ArticleType[]> {
 	try {
 		const response = await fetch(`${process.env.API_POSTS_URL}/posts`)
 		const data = await response.json()
@@ -18,7 +18,7 @@ export async function getArticles(): Promise<ArticleProps[]> {
 	}
 }
 
-export async function getArticle(id: number): Promise<ArticleProps> {
+export async function getArticle(id: number): Promise<ArticleType> {
 	try {
 		const response = await fetch(`${process.env.API_POSTS_URL}/posts/${id}`)
 
@@ -35,5 +35,21 @@ export async function getArticle(id: number): Promise<ArticleProps> {
 	} catch (error) {
 		console.error('Error fetching article:', error)
 		throw error
+	}
+}
+
+export async function getTags(): Promise<TagType[]> {
+	try {
+		const response = await fetch(`${process.env.API_POSTS_URL}/tags`)
+		const data = await response.json()
+
+		if (!data) {
+			notFound()
+		}
+
+		return formatTags(data)
+	} catch (error) {
+		console.error('Failed to fetch tags', error)
+		throw new Error('Failed to fetch tags')
 	}
 }

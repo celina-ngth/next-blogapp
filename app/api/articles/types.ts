@@ -10,3 +10,25 @@ export interface ArticleApi {
   views: number
   userId: number
 }
+
+export interface ArticleType {
+  id: number
+  imageUrl: string
+  title: string
+  body: string
+  likes: number
+  views: number
+  tags: string[]
+}
+
+export interface TagApi {
+  slug: string
+  name: string
+  url: string
+}
+
+export interface TagType {
+  slug: string
+  name: string
+  url: string
+}

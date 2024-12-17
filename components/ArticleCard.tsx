@@ -3,18 +3,9 @@ import Text, { Tag } from '@/components/ui/Text'
 import Link from 'next/link'
 import { Eye, Heart } from 'lucide-react'
 import Image from 'next/image'
+import { ArticleType } from '@/app/api/articles/types'
 
-export interface ArticleProps {
-	id: number
-	imageUrl: string
-	title: string
-	body: string
-	likes: number
-	views: number
-	tags: string[]
-}
-
-const Article: React.FC<ArticleProps> = ({
+const Article: React.FC<ArticleType> = ({
 	id,
 	title,
 	body,
