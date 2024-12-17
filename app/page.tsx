@@ -17,6 +17,7 @@ export default async function Home() {
 							body={article.body}
 							likes={article.likes}
 							views={article.views}
+							tags={article.tags}
 						/>
 					))}
 				</div>

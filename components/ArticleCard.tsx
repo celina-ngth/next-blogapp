@@ -11,7 +11,7 @@ export interface ArticleProps {
 	body: string
 	likes: number
 	views: number
-	onClick?: () => void
+	tags: string[]
 }
 
 const Article: React.FC<ArticleProps> = ({

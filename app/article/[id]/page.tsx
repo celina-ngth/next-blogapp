@@ -1,4 +1,5 @@
 import { getArticle } from '@/app/api/articles/route'
+import TopicsRecommendations from '@/components/TopicsRecommendations'
 import Text, { Tag } from '@/components/ui/Text'
 import { Heart, Eye, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
@@ -12,7 +13,7 @@ export default async function Page({
 	const article = await getArticle((await params).id)
 
 	return (
-		<article className="gap-6 grid lg:grid-cols-5 items-start">
+		<article className="gap-8 grid lg:grid-cols-5 items-start">
 			<Link href={'/'}>
 				<div className="flex items-center gap-2">
 					<ArrowLeft className="h-4 w-4" /> Back
@@ -36,7 +37,12 @@ export default async function Page({
 
 				<Text tag={Tag.P}>{article.body}</Text>
 			</div>
-			<div></div>
+
+			<div>
+				{article.tags?.length > 0 && (
+					<TopicsRecommendations title="Tags" tags={article.tags} />
+				)}
+			</div>
 		</article>
 	)
 }
