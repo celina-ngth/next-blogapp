@@ -1,14 +1,12 @@
-export interface ArticlesApi {
-  id: number,
+export interface ArticleApi {
+  id: number
   title: string
   body: string
   tags: string[]
   reactions: {
-    likes: number,
+    likes: number
     dislikes: number
   },
-  views: number,
+  views: number
   userId: number
 }
-
-
