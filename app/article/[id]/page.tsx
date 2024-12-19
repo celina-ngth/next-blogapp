@@ -1,5 +1,5 @@
 import { getArticle } from '@/app/api/articles/route'
-import TopicsRecommendations from '@/components/TopicsRecommendations'
+import Tags from '@/components/Tags'
 import Text, { Tag } from '@/components/ui/Text'
 import { Heart, Eye, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
@@ -39,9 +39,7 @@ export default async function Page({
 			</div>
 
 			<div>
-				{article.tags?.length > 0 && (
-					<TopicsRecommendations title="Tags" tags={article.tags} />
-				)}
+				{article.tags?.length > 0 && <Tags title="Tags" tags={article.tags} />}
 			</div>
 		</article>
 	)

@@ -1,8 +1,10 @@
-import { getArticles } from '@/app/api/articles/route'
+import { getArticles, getTags } from '@/app/api/articles/route'
 import Article from '@/components/ArticleCard'
+import Tags from '@/components/Tags'
 
 export default async function Home() {
 	const articles = await getArticles()
+	const tags = await getTags()
 
 	return (
 		<div className="grid lg:grid-cols-3 lg:divide-x divide-neutral gap-8">
@@ -23,7 +25,9 @@ export default async function Home() {
 				</div>
 			)}
 
-			<div className="w-full h-full lg:pl-8"></div>
+			<div className="w-full h-full lg:pl-8">
+				{tags && <Tags title="Top topics" tags={tags.slice(0, 10)} />}
+			</div>
 		</div>
 	)
 }

@@ -40,7 +40,7 @@ export async function getArticle(id: number): Promise<ArticleType> {
 
 export async function getTags(): Promise<TagType[]> {
 	try {
-		const response = await fetch(`${process.env.API_POSTS_URL}/tags`)
+		const response = await fetch(`${process.env.API_POSTS_URL}/posts/tags`)
 		const data = await response.json()
 
 		if (!data) {
