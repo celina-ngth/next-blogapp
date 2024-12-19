@@ -19,6 +19,7 @@ export interface ArticleType {
   likes: number
   views: number
   tags?: TagType[]
+  authorId: number
 }
 
 export interface TagApi {

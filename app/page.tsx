@@ -11,15 +11,7 @@ export default async function Home() {
 			{articles && (
 				<div className="lg:col-span-2 flex flex-col divide-y divide-neutral">
 					{articles.map((article) => (
-						<ArticleCard
-							id={article.id}
-							key={article.id}
-							imageUrl={article.imageUrl}
-							title={article.title}
-							body={article.body}
-							likes={article.likes}
-							views={article.views}
-						/>
+						<ArticleCard {...article} key={article.id} />
 					))}
 				</div>
 			)}
