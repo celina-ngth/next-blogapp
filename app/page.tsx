@@ -1,5 +1,5 @@
 import { getArticles, getTags } from '@/app/api/articles/route'
-import Article from '@/components/ArticleCard'
+import ArticleCard from '@/components/ArticleCard'
 import Tags from '@/components/Tags'
 
 export default async function Home() {
@@ -11,7 +11,7 @@ export default async function Home() {
 			{articles && (
 				<div className="lg:col-span-2 flex flex-col divide-y divide-neutral">
 					{articles.map((article) => (
-						<Article
+						<ArticleCard
 							id={article.id}
 							key={article.id}
 							imageUrl={article.imageUrl}
@@ -19,7 +19,6 @@ export default async function Home() {
 							body={article.body}
 							likes={article.likes}
 							views={article.views}
-							tags={article.tags}
 						/>
 					))}
 				</div>

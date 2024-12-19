@@ -18,7 +18,7 @@ export interface ArticleType {
   body: string
   likes: number
   views: number
-  tags: string[]
+  tags?: TagType[]
 }
 
 export interface TagApi {

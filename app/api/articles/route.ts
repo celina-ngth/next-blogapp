@@ -21,6 +21,7 @@ export async function getArticles(): Promise<ArticleType[]> {
 export async function getArticle(id: number): Promise<ArticleType> {
 	try {
 		const response = await fetch(`${process.env.API_POSTS_URL}/posts/${id}`)
+		const tags = await getTags()
 
 		if (!response.ok) {
 			throw new Error(`Failed to fetch article with id: ${id}`)
@@ -31,7 +32,12 @@ export async function getArticle(id: number): Promise<ArticleType> {
 			notFound()
 		}
 
-		return formatArticle(data)
+		const article = formatArticle(data)
+
+		return {
+			...article,
+			tags: tags.filter((tag) => data.tags?.includes(tag.slug)),
+		}
 	} catch (error) {
 		console.error('Error fetching article:', error)
 		throw error

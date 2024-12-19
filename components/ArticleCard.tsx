@@ -5,7 +5,7 @@ import { Eye, Heart } from 'lucide-react'
 import Image from 'next/image'
 import { ArticleType } from '@/app/api/articles/types'
 
-const Article: React.FC<ArticleType> = ({
+const ArticleCard: React.FC<ArticleType> = ({
 	id,
 	title,
 	body,
@@ -47,4 +47,4 @@ const Article: React.FC<ArticleType> = ({
 	)
 }
 
-export default Article
+export default ArticleCard

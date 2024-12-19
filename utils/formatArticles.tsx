@@ -13,7 +13,6 @@ export const formatArticle = (article: ArticleApi): ArticleType => {
 		body: article.body,
 		likes: article.reactions.likes,
 		views: article.views,
-		tags: article.tags,
 	}
 }
 

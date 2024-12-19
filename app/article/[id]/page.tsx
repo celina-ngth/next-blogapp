@@ -39,7 +39,9 @@ export default async function Page({
 			</div>
 
 			<div>
-				{article.tags?.length > 0 && <Tags title="Tags" tags={article.tags} />}
+				{article.tags && article.tags?.length > 0 && (
+					<Tags title="Tags" tags={article.tags} />
+				)}
 			</div>
 		</article>
 	)
