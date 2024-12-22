@@ -4,6 +4,7 @@ export interface UserApi {
   lastName: string,
   email: string,
   username: string,
+  image: string
 }
 
 export interface UserType {
@@ -12,4 +13,5 @@ export interface UserType {
   lastname: string,
   email: string,
   username: string,
+  image: string
 }

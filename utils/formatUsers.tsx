@@ -7,5 +7,6 @@ export const formatUser = (user: UserApi): UserType => {
 		lastname: user.lastName,
 		email: user.email,
 		username: user.username,
+		image: user.image,
 	}
 }

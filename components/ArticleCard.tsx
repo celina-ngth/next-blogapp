@@ -22,11 +22,11 @@ const ArticleCard: React.FC<ArticleType> = async ({ ...props }) => {
 
 					<div className="flex justify-between text-sm text-secondary-light">
 						<div className="flex items-center gap-2">
-							<Heart className="h-4 w-4" /> {props.likes} likes
+							<Heart className="size-4" /> {props.likes} likes
 						</div>
 
 						<div className="flex items-center gap-2">
-							<Eye className="h-4 w-4" /> {props.views} views
+							<Eye className="size-4" /> {props.views} views
 						</div>
 					</div>
 				</div>
