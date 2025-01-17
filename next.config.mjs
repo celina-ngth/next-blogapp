@@ -5,11 +5,6 @@ const nextConfig = {
 			{
 				protocol: 'https',
 				hostname: 'dummyjson.com',
-				pathname: '/icon/**',
-			},
-			{
-				protocol: 'https',
-				hostname: 'via.assets.so',
 			},
 		],
 	},
