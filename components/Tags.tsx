@@ -19,7 +19,7 @@ const Tags: React.FC<TagsProps> = ({ title, tags }) => {
 					</Text>
 					<div className="flex flex-wrap gap-2">
 						{tags.map((tag) => (
-							<Link href={`/`} key={tag.name}>
+							<Link href={`/tag/${tag.slug}`} key={tag.name}>
 								<Button variant={Variant.PRIMARY_LIGHT} size={Size.SMALL}>
 									{tag.name ?? tag}
 								</Button>

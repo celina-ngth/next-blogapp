@@ -18,6 +18,23 @@ export async function getArticles(): Promise<ArticleType[]> {
 	}
 }
 
+export async function getArticlesByTag(tag: string): Promise<ArticleType[]> {
+	try {
+		const response = await fetch(`${process.env.API_POSTS_URL}/posts/tag/${tag}`)
+		const data = await response.json()
+
+		if (!data || !data.posts) {
+			notFound()
+		}
+
+
+		return formatArticles(data.posts)
+	} catch (error) {
+		console.error('Error fetching articles by tag:', error)
+		throw error
+	}
+}
+
 export async function getArticle(id: number): Promise<ArticleType> {
 	try {
 		const response = await fetch(`${process.env.API_POSTS_URL}/posts/${id}`)
